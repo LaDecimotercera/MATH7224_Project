@@ -4,6 +4,7 @@ import numpy as np
 
 class IT_calculator():
     def __init__(self, h=50):
+        # h is the hyperparameter used to fine tune the bandwith of Gaussian Kernel, which is very important
         self.alpha = 1.01
         self.h = h
         # Define the device
