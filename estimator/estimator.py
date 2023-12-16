@@ -21,7 +21,7 @@ class IT_calculator():
         # Move X to the defined device (either GPU or CPU)
         X = X.to(self.device)
         n = X.shape[0]
-        d = X.shape[1] * X.shape[2]  # Flatten 28x28 to a single dimension
+        d = X[0].numel()  # Flatten 28x28 to a single dimension
         X_flat = X.view(n, -1)  # Reshape to [n, 28*28]
 
         sigma = self.h * n ** (-1/(4+d))
