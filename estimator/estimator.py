@@ -29,8 +29,7 @@ class IT_calculator():
 
         # Use the flattened X for kernel computation
         A = self.kernel(X_flat, X_flat, sigma)
-        D = torch.sqrt(A.sum(1)).view(n, 1)
-        A = A / (D * D.T)
+        A = A * 1/n
         
         return A
 
